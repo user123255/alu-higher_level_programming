@@ -1,4 +1,4 @@
 #!/usr/bin/python3
-str = "Holberton School"
-str = str[0:9] + str[15:] + str[9:15]
-print(str)
+holberton = "Holberton School"
+modified_str = holberton[0:9] + holberton[15:] + holberton[9:15]
+print(modified_str)

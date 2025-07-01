@@ -10,7 +10,8 @@ class Square:
 
         Args:
             size (int): The size of the square.
-            position (tuple): Tuple of 2 positive integers representing position.
+            position (tuple): Tuple of 2 positive integers
+                              representing the position.
         """
         self.size = size
         self.position = position
@@ -69,11 +70,8 @@ class Square:
             print()
             return
 
-        # Print vertical space (position[1])
         for _ in range(self.__position[1]):
             print()
-
-        # Print each row with horizontal space (position[0])
         for _ in range(self.__size):
             print(" " * self.__position[0] + "#" * self.__size)
 

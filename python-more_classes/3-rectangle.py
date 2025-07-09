@@ -1,23 +1,23 @@
 #!/usr/bin/python3
-"""Defines a Rectangle class."""
+"""Defines a class Rectangle."""
 
 
 class Rectangle:
     """Represents a rectangle."""
 
     def __init__(self, width=0, height=0):
-        """Initialize the rectangle with optional width and height."""
+        """Initialize a new Rectangle with optional width and height."""
         self.width = width
         self.height = height
 
     @property
     def width(self):
-        """Retrieve the width."""
+        """Get the width of the Rectangle."""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """Set the width with validation."""
+        """Set the width of the Rectangle."""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
@@ -26,12 +26,12 @@ class Rectangle:
 
     @property
     def height(self):
-        """Retrieve the height."""
+        """Get the height of the Rectangle."""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """Set the height with validation."""
+        """Set the height of the Rectangle."""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
@@ -39,21 +39,19 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        """Return the area of the rectangle."""
+        """Return the area of the Rectangle."""
         return self.__width * self.__height
 
     def perimeter(self):
-        """Return the perimeter of the rectangle."""
+        """Return the perimeter of the Rectangle."""
         if self.__width == 0 or self.__height == 0:
             return 0
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
-        """Return the string representation with '#' characters."""
+        """Return a string representation of the Rectangle using '#'."""
         if self.__width == 0 or self.__height == 0:
             return ""
-        return "\n".join(["#" * self.__width for _ in range(self.__height)])
+        lines = ["#" * self.__width for _ in range(self.__height)]
+        return "\n".join(lines)
 
-    def __repr__(self):
-        """Return the string representation for debugging."""
-        return f"<{__name__}.{self.__class__.__name__} object at {hex(id(self))}>"

@@ -6,18 +6,18 @@ class Rectangle:
     """Represents a rectangle."""
 
     def __init__(self, width=0, height=0):
-        """Initialize a new Rectangle with optional width and height."""
+        """Initialize a new Rectangle."""
         self.width = width
         self.height = height
 
     @property
     def width(self):
-        """Get the width of the Rectangle."""
+        """Get the width."""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """Set the width of the Rectangle."""
+        """Set the width with validation."""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
@@ -26,12 +26,12 @@ class Rectangle:
 
     @property
     def height(self):
-        """Get the height of the Rectangle."""
+        """Get the height."""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """Set the height of the Rectangle."""
+        """Set the height with validation."""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
@@ -39,18 +39,17 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        """Return the area of the Rectangle."""
+        """Return the area."""
         return self.__width * self.__height
 
     def perimeter(self):
-        """Return the perimeter of the Rectangle."""
+        """Return the perimeter."""
         if self.__width == 0 or self.__height == 0:
             return 0
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
-        """Return a string representation of the Rectangle using '#'."""
+        """Return the string representation of the rectangle using #."""
         if self.__width == 0 or self.__height == 0:
             return ""
-        lines = ["#" * self.__width for _ in range(self.__height)]
-        return "\n".join(lines)
+        return "\n".join(["#" * self.__width for _ in range(self.__height)])

@@ -13,6 +13,7 @@ def is_same_class(obj, a_class):
     """
     return type(obj) is a_class
 
+
 # Example test cases
 if __name__ == "__main__":
     a = 1

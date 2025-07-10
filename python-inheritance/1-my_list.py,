@@ -1,22 +1,19 @@
->>> MyList = __import__('1-my_list').MyList
+#!/usr/bin/python3
 
->>> my_list = MyList()
->>> print(my_list)
-[]
->>> my_list.print_sorted()
-[]
->>> my_list.append(3)
->>> my_list.append(1)
->>> my_list.append(4)
->>> my_list.append(2)
->>> print(my_list)
-[3, 1, 4, 2]
->>> my_list.print_sorted()
-[1, 2, 3, 4]
->>> my_list.append(-5)
->>> print(my_list)
-[3, 1, 4, 2, -5]
->>> my_list.print_sorted()
-[-5, 1, 2, 3, 4]
->>> isinstance(my_list, list)
-True
+class MyList(list):
+    def print_sorted(self):
+        """Prints the list in ascending order."""
+        print(sorted(self))
+
+# Example code to test the MyList class
+if __name__ == "__main__":
+    my_list = MyList()
+    my_list.append(1)
+    my_list.append(4)
+    my_list.append(2)
+    my_list.append(3)
+    my_list.append(5)
+    
+    print(my_list)          # Output: [1, 4, 2, 3, 5]
+    my_list.print_sorted()  # Output: [1, 2, 3, 4, 5]
+    print(my_list)          # Output: [1, 4, 2, 3, 5]

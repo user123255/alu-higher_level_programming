@@ -1,6 +1,11 @@
 #!/usr/bin/python3
-"""Module for defining the BaseGeometry class."""
+"""
+This module defines an empty class named BaseGeometry.
+"""
+
 
 class BaseGeometry:
-    """An empty class representing basic geometry."""
+    """
+    An empty class that will later be extended.
+    """
     pass

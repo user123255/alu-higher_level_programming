@@ -1,18 +1,29 @@
 #!/usr/bin/python3
-"""Defines a Square class that inherits from Rectangle."""
+"""
+This module defines a Square class that inherits from Rectangle.
+"""
 
 Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square(Rectangle):
-    """Represents a square using width and height from Rectangle."""
+    """
+    Square class that inherits from Rectangle.
+
+    Attributes:
+        __size (int): The size of the square's sides (private).
+    """
 
     def __init__(self, size):
         """
-        Initialize a square.
+        Initialize a Square.
 
         Args:
-            size (int): Size of the square sides. Must be a positive integer.
+            size (int): The size of the square.
+
+        Raises:
+            TypeError: If size is not an integer.
+            ValueError: If size <= 0.
         """
         self.integer_validator("size", size)
         self.__size = size
@@ -23,5 +34,5 @@ class Square(Rectangle):
         return self.__size ** 2
 
     def __str__(self):
-        """Return the string representation of the square."""
+        """Return string representation of the square."""
         return f"[Square] {self.__size}/{self.__size}"

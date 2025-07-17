@@ -1,2 +1,2 @@
--- Script to list all MySQL databases sorted by name
-SHOW DATABASES ORDER BY `Database`;
+-- Script to list all MySQL databases
+SHOW DATABASES;

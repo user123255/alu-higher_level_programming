@@ -1,15 +1,8 @@
--- Script that lists all privileges of MySQL users user_0d_1 and user_0d_2
--- It assumes that the users are created and privileges are assigned beforehand
--- SQL keywords are in uppercase
+-- 0-privileges.sql: List all privileges of MySQL users user_0d_1 and user_0d_2 on localhost.
+-- If the users do not exist, they are created (without any extra privileges) to avoid errors.
 
--- Ensure user_0d_1 exists
 CREATE USER IF NOT EXISTS 'user_0d_1'@'localhost';
-
--- Ensure user_0d_2 exists
 CREATE USER IF NOT EXISTS 'user_0d_2'@'localhost';
 
--- Show privileges for user_0d_1
 SHOW GRANTS FOR 'user_0d_1'@'localhost';
-
--- Show privileges for user_0d_2
 SHOW GRANTS FOR 'user_0d_2'@'localhost';

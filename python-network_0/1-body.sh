@@ -1,3 +1,2 @@
 #!/bin/bash
-# Script to display body only for 200 OK response
-curl -sL -w "%{http_code}" "$1" | { read body; code=${body: -3}; [ "$code" = "200" ] && echo "${body::-3}"; }
+curl -sL -w "%{http_code}" "$1" -o temp_body && [ "$(tail -c 3 temp_body)" = "200" ] && head -c -3 temp_body

@@ -1,10 +1,6 @@
--- Task 0: Create MySQL users with specific privileges
--- This script creates users and grants them appropriate permissions as required
+-- List privileges for user_0d_1 and user_0d_2 on localhost
+-- If a user has no privileges, no error will be thrown, and no grants shown for that user
 
--- Create user_0d_1 with root-level access
-CREATE USER IF NOT EXISTS 'user_0d_1'@'localhost' IDENTIFIED BY 'user_0d_1_pwd';
-GRANT ALL PRIVILEGES ON *.* TO 'user_0d_1'@'localhost' WITH GRANT OPTION;
+SHOW GRANTS FOR 'user_0d_1'@'localhost';
 
--- Create user_0d_2 with SELECT and INSERT privileges only on user_2_db
-CREATE USER IF NOT EXISTS 'user_0d_2'@'localhost' IDENTIFIED BY 'user_0d_2_pwd';
-GRANT SELECT, INSERT ON user_2_db.* TO 'user_0d_2'@'localhost';
+SHOW GRANTS FOR 'user_0d_2'@'localhost';

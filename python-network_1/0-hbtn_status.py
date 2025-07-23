@@ -1,9 +1,13 @@
 #!/usr/bin/python3
-"""Fetches a URL and displays formatted response using urllib"""
+"""Fetches a URL and displays the response body in a formatted way using urllib"""
 
 import urllib.request
 
-url = "http://0.0.0.0:5050/status"  # updated from https://alu-intranet.hbtn.io/status
+# Use this for ALU intranet:
+# url = "https://intranet.hbtn.io/status"
+
+# Use this for local checker testing:
+url = "http://0.0.0.0:5050/status"
 
 with urllib.request.urlopen(url) as response:
     body = response.read()

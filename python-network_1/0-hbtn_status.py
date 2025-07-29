@@ -1,14 +1,27 @@
 #!/usr/bin/python3
-"""A script that fetches https://intranet.hbtn.io/status using urllib."""
+"""
+This module fetches and prints the status of two URLs:
+1. https://intranet.hbtn.io/status
+2. http://0.0.0.0:5050/status
+"""
 
-from urllib import request
+import requests
 
+def fetch_status(url):
+    """
+    Fetches the status from the given URL and prints the response.
+
+    Args:
+        url (str): The URL to fetch the status from.
+    """
+    try:
+        # Using a with statement to ensure proper resource management
+        with requests.get(url) as response:
+            print(f"Response from {url}: {response.status_code} - {response.text}")
+    except requests.RequestException as e:
+        print(f"Error fetching {url}: {e}")
 
 if __name__ == "__main__":
-    url = "https://intranet.hbtn.io/status"
-    with request.urlopen(url) as response:
-        body = response.read()
-        print("Body response:")
-        print(f"\t- type: {type(body)}")
-        print(f"\t- content: {body}")
-        print(f"\t- utf8 content: {body.decode('utf-8')}")
+    # Fetching from the specified URLs
+    fetch_status("https://intranet.hbtn.io/status")
+    fetch_status("http://0.0.0.0:5050/status")  # Ensure this server is running

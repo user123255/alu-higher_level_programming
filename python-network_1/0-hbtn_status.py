@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Fetches https://intranet.hbtn.io/status using urllib and prints its content."""
+"""Fetches https://intranet.hbtn.io/status and displays the response body content."""
 
 from urllib import request
 

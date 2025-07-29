@@ -1,13 +1,14 @@
 #!/usr/bin/python3
-"""Fetches status from https://intranet.hbtn.io/status using requests module."""
+"""Fetches status from a given URL using the requests package."""
 
 import requests
 
+
 if __name__ == "__main__":
-    url = "https://intranet.hbtn.io/status"
+    url = "http://0.0.0.0:5050/status"
     response = requests.get(url)
-    body = response.text
+    content = response.text
 
     print("Body response:")
-    print(f"\t- type: {type(body)}")
-    print(f"\t- content: {body}")
+    print(f"\t- type: {type(content)}")
+    print(f"\t- content: {content}")

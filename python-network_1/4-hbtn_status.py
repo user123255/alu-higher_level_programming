@@ -1,13 +1,10 @@
 #!/usr/bin/python3
-"""
-Fetches the status from http://0.0.0.0:5050/status
-and prints the body of the response.
-"""
+"""Fetches status from https://intranet.hbtn.io/status using requests module."""
 
 import requests
 
 if __name__ == "__main__":
-    url = "http://0.0.0.0:5050/status"
+    url = "https://intranet.hbtn.io/status"
     response = requests.get(url)
     body = response.text
 

@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-import requests
+"""Script that fetches the X-Request-Id from the response header of a URL."""
 import sys
+import requests
 
 if __name__ == "__main__":
     url = sys.argv[1]

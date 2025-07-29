@@ -1,16 +1,18 @@
 #!/usr/bin/python3
 """
-Fetches the status and displays the body with type and content.
-
-Use http://0.0.0.0:5050/status for local testing.
+Fetches https://intranet.hbtn.io/status and displays the response body
+with its type and content.
 """
 
 import requests
 
 if __name__ == "__main__":
-    url = "http://0.0.0.0:5050/status"
-    response = requests.get(url)
-    content = response.text
-    print("Body response:")
-    print("\t- type: {}".format(type(content)))
-    print("\t- content: {}".format(content))
+    url = "https://intranet.hbtn.io/status"
+    try:
+        response = requests.get(url)
+        content = response.text
+        print("Body response:")
+        print("\t- type: {}".format(type(content)))
+        print("\t- content: {}".format(content))
+    except requests.exceptions.RequestException:
+        print("Failed to fetch the status.")

@@ -23,4 +23,4 @@ def fetch_status(url):
 if __name__ == "__main__":
     # Fetching from the specified URLs
     fetch_status("https://intranet.hbtn.io/status")
-    fetch_status("http://0.0.0.0:5050/status")  # Ensure this is the correct URL
+    fetch_status("http://0.0.0.0:5050/status")  # Make sure the local server is running

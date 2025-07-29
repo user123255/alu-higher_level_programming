@@ -1,12 +1,11 @@
 #!/usr/bin/python3
-"""Fetches the status from a given URL using the requests package."""
+"""Fetches the status from https://alu-intranet.hbtn.io/status using requests."""
 
 import requests
-import sys
 
 
 if __name__ == "__main__":
-    url = sys.argv[1]
+    url = "https://alu-intranet.hbtn.io/status"
     response = requests.get(url)
     content = response.text
 

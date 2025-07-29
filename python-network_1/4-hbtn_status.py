@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This module fetches and prints the status of two URLs: 
+This module fetches and prints the status of two URLs:
 1. https://intranet.hbtn.io/status
 2. http://0.0.0.0:5050/status
 """
@@ -23,4 +23,4 @@ def fetch_status(url):
 if __name__ == "__main__":
     # Fetching from the specified URLs
     fetch_status("https://intranet.hbtn.io/status")
-    fetch_status("http://0.0.0.0:5050/status")
+    fetch_status("http://0.0.0.0:5050/status")  # Ensure this is the correct URL

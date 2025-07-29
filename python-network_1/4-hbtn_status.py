@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-"""Fetches status from a given URL using the requests package."""
+"""Fetches the status from a given URL using the requests package."""
 
 import requests
+import sys
 
 
 if __name__ == "__main__":
-    url = "http://0.0.0.0:5050/status"
+    url = sys.argv[1]
     response = requests.get(url)
     content = response.text
 

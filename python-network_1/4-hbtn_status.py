@@ -1,3 +1,10 @@
+#!/usr/bin/python3
+"""
+This module fetches and prints the status of two URLs: 
+1. https://intranet.hbtn.io/status
+2. http://0.0.0.0:5050/status
+"""
+
 import requests
 
 def fetch_status(url):
@@ -9,7 +16,7 @@ def fetch_status(url):
     """
     try:
         response = requests.get(url)
-        print(f"Response: {response.status_code} - {response.text}")
+        print(f"Response from {url}: {response.status_code} - {response.text}")
     except requests.RequestException as e:
         print(f"Error fetching {url}: {e}")
 

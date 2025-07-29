@@ -1,14 +1,19 @@
-#!/usr/bin/python3
-"""Fetches the status from https://alu-intranet.hbtn.io/status using requests."""
-
 import requests
 
+def fetch_status(url):
+    """
+    Fetches the status from the given URL and prints the response.
+
+    Args:
+        url (str): The URL to fetch the status from.
+    """
+    try:
+        response = requests.get(url)
+        print(f"Response: {response.status_code} - {response.text}")
+    except requests.RequestException as e:
+        print(f"Error fetching {url}: {e}")
 
 if __name__ == "__main__":
-    url = "https://alu-intranet.hbtn.io/status"
-    response = requests.get(url)
-    content = response.text
-
-    print("Body response:")
-    print(f"\t- type: {type(content)}")
-    print(f"\t- content: {content}")
+    # Fetching from the specified URLs
+    fetch_status("https://intranet.hbtn.io/status")
+    fetch_status("http://0.0.0.0:5050/status")

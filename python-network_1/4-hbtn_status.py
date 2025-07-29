@@ -1,18 +1,16 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
+"""
+Fetches the status from http://0.0.0.0:5050/status
+and prints the body of the response.
+"""
+
 import requests
 
-def main():
-    url = "https://alu-intranet.hbtn.io/status"
-    headers = {
-        "User-Agent": "Mozilla/5.0"  # Spoof a simple browser user-agent
-    }
-
-    response = requests.get(url, headers=headers)
+if __name__ == "__main__":
+    url = "http://0.0.0.0:5050/status"
+    response = requests.get(url)
     body = response.text
 
     print("Body response:")
     print(f"\t- type: {type(body)}")
     print(f"\t- content: {body}")
-
-if __name__ == "__main__":
-    main()

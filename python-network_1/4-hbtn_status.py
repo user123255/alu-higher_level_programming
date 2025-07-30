@@ -1,14 +1,9 @@
 #!/usr/bin/python3
-"""Fetches status from a specific URL using the requests package."""
-
+"""Documented now"""
 import requests
 
-
-if __name__ == "__main__":
-    url = "http://0.0.0.0:5050/status"  # checker swaps this to intranet automatically
-    response = requests.get(url)
-    content = response.text
-
+if __name__ == '__main__':
+    response = requests.get("https://intranet.hbtn.io/status")
     print("Body response:")
-    print(f"\t- type: {type(content)}")
-    print(f"\t- content: {content}")
+    print("\t- type: {}".format(type(response.text)))
+    print("\t- content: {}".format(response.text))

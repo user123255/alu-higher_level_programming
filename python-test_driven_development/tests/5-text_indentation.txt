@@ -1,0 +1,25 @@
+ndentation("Hello. How are you? I am fine: thank you.")
+Hello.
+$
+$
+How are you?
+$
+$
+I am fine:
+$
+$
+thank you.
+$
+
+>>> text_indentation("This is a test.   Next sentence?")
+This is a test.
+$
+$
+Next sentence?
+$
+$
+
+>>> text_indentation(123)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string

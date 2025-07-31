@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-"""Fetches https://alu-intranet.hbtn.io/status using urllib"""
+"""Fetches a URL and displays the body response in a specific format"""
+
 import urllib.request
 
-url = "https://alu-intranet.hbtn.io/status"
+url = "http://0.0.0.0:5050/status"  # change to alu-intranet URL before final submit
 
 with urllib.request.urlopen(url) as response:
     body = response.read()

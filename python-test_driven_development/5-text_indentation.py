@@ -4,6 +4,8 @@ Module that contains text_indentation function
 which prints text with two new lines after '.', '?', and ':'.
 """
 
+
+
 def text_indentation(text):
     """
     Prints the text with two new lines after each '.', '?', and ':' characters.

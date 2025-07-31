@@ -38,4 +38,3 @@ def matrix_divided(matrix, div):
         raise TypeError("Each row of the matrix must have the same size")
 
     return [[round(num / div, 2) for num in row] for row in matrix]
-

@@ -5,12 +5,12 @@ casted to integers.
 """
 
 
-def add_integer(a, b=98):
+def add_integer(a=0, b=98):
     """
     Adds two integers or floats after casting them to integers.
 
     Args:
-        a (int or float): first number
+        a (int or float): first number (default 0)
         b (int or float, optional): second number (default 98)
 
     Raises:

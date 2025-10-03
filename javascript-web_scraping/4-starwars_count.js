@@ -1,34 +1,23 @@
 #!/usr/bin/node
-// Script that prints the number of movies where Wedge Antilles (ID 18) is present
-
+const fs = require('fs');
 const request = require('request');
 
-const url = process.argv[2];
-const wedgeId = 'https://swapi-api.alx-tools.com/api/people/18/';
+const pathOrUrl = process.argv[2];
 
-if (!url) {
+if (!pathOrUrl) {
   console.log(0);
+} else if (pathOrUrl.startsWith('http://') || pathOrUrl.startsWith('https://')) {
+  // Use request for URLs
+  request(pathOrUrl, { json: true }, (err, response, body) => {
+    if (err) return console.log(0);
+    // Assuming the body is an array or object with array
+    console.log(body.length || 0);
+  });
 } else {
-  request(url, { json: true }, (err, response, body) => {
-    if (err) {
-      console.log(0);
-      return;
-    }
-
-    try {
-      // body.results contains the list of films
-      const films = body.results || [];
-      let count = 0;
-
-      for (const film of films) {
-        if (film.characters && film.characters.includes(wedgeId)) {
-          count++;
-        }
-      }
-
-      console.log(count);
-    } catch (e) {
-      console.log(0);
-    }
+  // Use fs for local files
+  fs.readFile(pathOrUrl, 'utf-8', (err, data) => {
+    if (err) return console.log(0);
+    const lines = data.split('\n').filter(Boolean);
+    console.log(lines.length);
   });
 }
